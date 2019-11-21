@@ -36,7 +36,7 @@ int main() {
 			int diagRight = -1;
 
 			int r = i+1;
-			if (r > sizeBound){
+			if (r > sizeBound){ // in first row
 				boardMax[i][j] = boardActual[i][j];
 				continue;
 			}
@@ -66,11 +66,12 @@ int main() {
 		}// end inner for loop
 	} // end outer for loop
 
+
 	// check the row with vaults for the largest total & setting results
 	int tempMax = boardMax[0][0];
 	int num = 1;
 	for (int i = 1; i <= sizeBound; i++){
-		if (boardMax[0][i] > total) {
+		if (boardMax[0][i] > tempMax) {
 			tempMax = boardMax[0][i];
 			num = i+1;
 		}
